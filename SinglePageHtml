@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Premsai Samala | Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050816;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#050816;
+    z-index:1000;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#4f8cff;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#4f8cff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    padding:100px 20px;
+    background:
+    radial-gradient(circle,#102a5e,#050816);
+}
+
+.hero img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:4px solid #4f8cff;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+.hero h2{
+    color:#4f8cff;
+    margin:10px 0;
+}
+
+.hero p{
+    max-width:700px;
+    color:#cbd5e1;
+}
+
+.btn{
+    margin-top:25px;
+    display:inline-block;
+    background:#4f8cff;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:10px;
+}
+
+.section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.about{
+    text-align:center;
+    line-height:1.8;
+    color:#cbd5e1;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.skill-card{
+    background:#111827;
+    border:1px solid #4f8cff;
+    padding:15px 20px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px #4f8cff;
+}
+
+.skill-card i{
+    color:#4f8cff;
+    font-size:22px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:#111827;
+    border:1px solid #4f8cff;
+    border-radius:20px;
+    padding:25px;
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px #4f8cff;
+}
+
+.project-icon{
+    width:70px;
+    height:70px;
+    border-radius:15px;
+    background:#4f8cff20;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.project-icon i{
+    color:#4f8cff;
+    font-size:30px;
+}
+
+.project-card p{
+    color:#cbd5e1;
+    margin-top:10px;
+    line-height:1.6;
+}
+
+.tags{
+    margin-top:15px;
+}
+
+.tags span{
+    display:inline-block;
+    margin:5px;
+    background:#1e293b;
+    color:#4f8cff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.certs{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.cert{
+    background:#111827;
+    padding:15px 20px;
+    border-radius:10px;
+    border:1px solid #4f8cff;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+}
+
+.contact i{
+    color:#4f8cff;
+    margin-right:10px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#cbd5e1;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:40px;
+}
+
+nav ul{
+    display:none;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+}
+  .btn{
+    background:linear-gradient(135deg,#4f8cff,#7c3aed);
+    color:white;
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:
+        0 0 20px #4f8cff,
+        0 0 40px #7c3aed;
+}
+#projectDetails{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    background:#1e293b;
+    border-radius:10px;
+    color:white;
+    text-align:left;
+}
+  details{
+    margin-top:-10px;
+}
+
+summary{
+    list-style:none;
+    cursor:pointer;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+  .project-points{
+    margin-top:15px;
+    padding-left:20px;
+    color:#cbd5e1;
+}
+
+.project-points li{
+    margin-bottom:10px;
+}
+  .cert{
+    display:inline-block;
+    background:#111827;
+    padding:15px 20px;
+    border-radius:10px;
+    border:1px solid #4f8cff;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.cert:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 15px #4f8cff;
+}
+  .contact a{
+    color:white;
+    text-decoration:none;
+}
+
+.contact a:hover{
+    color:#4f8cff;
+    text-decoration:underline;
+}
+
+.contact i{
+    color:#4f8cff;
+    margin-right:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Premsai</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <img src="profile.jpg" alt="Profile">
+
+    <h1>Premsai Samala</h1>
+
+    <h2>Java Backend Developer</h2>
+
+    <p>
+        Building scalable microservices, secure REST APIs,
+        Keycloak SSO solutions and cloud-native applications.
+    </p>
+  
+  <a href="#projects" class="btn">View Projects </a>
+    
+
+</section>
+
+<section class="section" id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+Java Backend Developer with 2 years of professional experience in designing and developing secure, scalable, and high-performance enterprise applications. I am passionate about transforming complex business requirements into efficient backend solutions and continuously improving system reliability, security, and performance.
+</div>
+
+</section>
+
+<section class="section" id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill-card"><i class="fa-brands fa-java"></i>Java</div>
+
+<div class="skill-card"><i class="fa-solid fa-leaf"></i>Spring Boot</div>
+  <div class="skill-card"><i class="fa-solid fa-user-shield"></i>Spring Security</div>
+
+<div class="skill-card"><i class="fa-solid fa-cubes"></i>Microservices</div>
+
+<div class="skill-card"><i class="fa-solid fa-shield-halved"></i>Keycloak</div>
+
+<div class="skill-card"><i class="fa-solid fa-lock"></i>OAuth2</div>
+
+<div class="skill-card"><i class="fa-solid fa-key"></i>JWT</div>
+
+<div class="skill-card"><i class="fa-solid fa-database"></i>PostgreSQL</div>
+
+<div class="skill-card"><i class="fa-brands fa-aws"></i>AWS</div>
+  
+  <div class="skill-card"><i class="fa-brands fa-python"></i>Python</div>
+
+<div class="skill-card"><i class="fa-brands fa-docker"></i>Docker</div>
+
+<div class="skill-card"><i class="fa-brands fa-git-alt"></i>Git</div>
+
+<div class="skill-card"><i class="fa-brands fa-jenkins"></i>Jenkins</div>
+  
+<div class="skill-card"><i class="fa-solid fa-diagram-project"></i>System Design</div>
+  <div class="skill-card"><i class="fa-solid fa-cubes"></i>Design Patterns</div>
+  <div class="skill-card"><i class="fa-solid fa-gears"></i>Multithreading</div>
+
+<div class="skill-card"><i class="fa-solid fa-code-branch"></i>REST APIs</div>
+
+</div>
+
+</section>
+
+<section class="section" id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+<div class="project-card">
+  
+    <div class="project-icon">
+        <i class="fa-solid fa-user-shield"></i>
+    </div>
+
+    <h3>Keycloak SSO Integration</h3>
+
+    <p>
+        Implemented Single Sign-On (SSO) using Keycloak in a microservices architecture, securing REST APIs through OAuth2 and JWT-based authentication. Centralized authentication and authorization to enable seamless user access across applications while improving security and access control.
+    </p>
+  
+  <details>
+        <summary class="btn">
+            View Details
+        </summary>
+
+        <div style="margin-top:15px;">
+
+            <h4>Project Details</h4>
+          <ul class="project-points">
+    <li>Configured realms, clients, roles, and user management.</li>
+    <li>Integrated OAuth2 and JWT authentication for REST APIs.</li>
+    <li>Implemented Role-Based Access Control (RBAC).</li>
+    <li>Enabled secure token generation, validation, and refresh flows.</li>
+            <li> Centralized authentication across multiple microservices.</li>
+            <li>Improved application security and user experience through seamless login/logout.</p>
+</ul>
+
+           
+        </div>
+
+    </details>
+
+    <div class="tags">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Keycloak</span>
+        <span>OAuth2</span>
+      <span>Rest Apis</span>
+      <span>Jwt</span>
+    </div>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-icon">
+<i class="fa-solid fa-file-lines"></i>
+</div>
+
+<h3>Log Processing System</h3>
+
+<p>
+Built a high-performance log processing system using Spring Boot and PostgreSQL to aggregate, process, and store logs from multiple applications, handling 1M+ records daily with efficient memory management.
+</p>
+  <details>
+        <summary class="btn">
+            View Details
+        </summary>
+
+        <div style="margin-top:15px;">
+
+            <h4>Project Details</h4>
+          <ul class="project-points">
+            <li>
+                Aggregated logs from multiple applications into a unified file.
+            </li>
+          <li>
+            Used multithreading and bounded queues for high throughput.
+          </li>
+          <li>
+           Processed and stored logs in PostgreSQL using batch inserts.
+          </li>
+          <li>Implemented automatic file trimming and 30-day log retention.</li>
+          <li>Improved throughput by 4x and reduced disk usage by 60%.</li>
+          </ul>
+        </div>
+
+    </details>
+
+<div class="tags">
+<span>Java</span>
+<span>PostgreSQL</span>
+<span>Threads</span>
+  <span>Blocking Queue</span>
+<span>Spring Boot</span>
+  <span>Executor services</span>
+  <span> Builder Design Pattern </span>
+</div>
+
+</div>
+  <div class="project-card">
+
+<div class="project-icon">
+<i class="fa-solid fa-file-lines"></i>
+</div>
+
+<h3>Legacy DXL Modernization & Secure Middleware Platform</h3>
+
+<p>
+  Modernized a legacy DXL-based system by migrating business logic to a scalable Java middleware layer, exposing secure REST APIs and reducing direct UI-backend dependencies while improving maintainability and security.
+</p>
+  <details>
+        <summary class="btn">
+            View Details
+        </summary>
+
+        <div style="margin-top:15px;">
+
+            <h4>Project Details</h4>
+         <ul class="project-points">
+    <li>Migrated legacy DXL business logic to a Java-based middleware layer.</li>
+    <li>Developed secure REST APIs using Spring Boot.</li>
+    <li>Reduced direct UI-backend dependency through middleware abstraction.</li>
+    <li>Implemented AES encryption for secure data transmission.</li>
+    <li>Integrated authentication and authorization mechanisms.</li>
+    <li>Centralized security controls within the middleware layer.</li>
+    <li>Improved system modularity, maintainability, and scalability.</li>
+    <li>Enhanced application performance and security posture.</li>
+</ul>
+        </div>
+
+    </details>
+
+<div class="tags">
+<span>Java</span>
+<span>Spring Boot</span>
+<span>REST API</span>
+<span>AES Encryption</span>
+<span>Authentication</span>
+<span>Authorization</span>
+<span>Middleware</span>
+<span>System Design</span>
+  <span> Builder Design Pattern </span>
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-icon">
+<i class="fa-solid fa-code"></i>
+</div>
+
+<h3>OpenAPI Stub Generator</h3>
+
+<p>
+Automated backend API stub generation using OpenAPI Generator, reducing manual coding effort and ensuring consistency between API specifications and implementation across multiple services.
+</p>
+   <details>
+        <summary class="btn">
+            View Details
+        </summary>
+
+        <div style="margin-top:15px;">
+
+            <h4>Project Details</h4>
+         <ul class="project-points">
+    <li>Reduced manual boilerplate coding effort by 40%.</li>
+    <li>Ensured API contract consistency across teams.</li>
+    <li>Automated model, controller, and interface generation.</li>
+    <li>Improved development speed and reduced integration errors.</li>
+    <li>Integrated OpenAPI Generator with Maven build process.</li>
+    <li>Supported multiple microservices using a standardized API-first approach.</li>
+</ul>
+        </div>
+
+    </details>
+
+<div class="tags">
+<span>OpenAPI</span>
+<span>Swagger</span>
+<span>Maven</span>
+  <span>Yaml</span>
+  <span>Json</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="certifications">
+
+<h2 class="section-title">Certifications</h2>
+
+<div class="certs">
+
+<a href="https://www.udemy.com/certificate/UC-3e7b9bb5-086f-4c19-b080-b0a0dfc0534f/" target="_blank" class="cert">
+Spring Boot & Hibernate
+</a>
+
+<a href="https://www.udemy.com/certificate/UC-130648b2-6404-4c39-b321-b5aa31ab60cb/" target="_blank" class="cert">
+OpenAPI & Swagger
+</a>
+
+<a href="https://drive.google.com/file/d/16afg2gB7to7wddv-kMw3T4Qe_oZ6LD3B/view" target="_blank" class="cert">
+Java Full Stack
+</a>
+  <a href="https://drive.google.com/file/d/1LyzTKx6wa8-WtCjszyvxOcKojPqy2BRb/view?usp=sharing" target="_blank" class="cert">
+Introduction to Programming in C
+</a>
+  <a href="https://drive.google.com/file/d/1gdtezpc25C7z63t6MfLgpGjLLGN5OAz7/view?usp=sharing" target="_blank" class="cert">
+The Joy of Computing Using Python
+</a>
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<h2 class="section-title">Contact</h2>
+  <div class="contact">
+
+<p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:premsaisamala@gmail.com">
+        premsaisamala@gmail.com
+    </a>
+</p>
+
+<p>
+    <i class="fa-brands fa-linkedin"></i>
+    <a href="https://www.linkedin.com/in/premsaisamala"
+       target="_blank">
+        linkedin.com/in/premsaisamala
+    </a>
+</p>
+
+<p>
+    <i class="fa-brands fa-github"></i>
+    <a href="https://github.com/Premsai1806"
+       target="_blank">
+        github.com/premsai
+    </a>
+</p>
+
+</div>
+
+
+</section>
+
+<footer>
+© 2026 Premsai Samala | Java Backend Developer
+</footer>
+
+</body>
+</html>
